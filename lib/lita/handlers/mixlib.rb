@@ -4,7 +4,7 @@ module Lita
   module Handlers
     class Mixlib < Handler
 
-      route /latest\s+(.+)/, :product, help: { "latest <product> <channel> [<platform> <version> <arch>]" => "Displays latest version of product" }
+      route /latest\s+(.+)/, :product, command: true, help: { "latest <product> <channel> [<platform> <version> <arch>]" => "Displays latest version of product" }
 
       def product(response)
         product_name = response.args[0] || 'chef'
